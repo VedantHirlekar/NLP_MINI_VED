@@ -18,7 +18,7 @@ if st.button("Predict Sentiment"):
         sequence = tokenizer.texts_to_sequences([user_input])
         padded = pad_sequences(sequence, maxlen=200)
         prediction = model.predict(padded)
-        sentiment = "😊 Positive" if prediction[0][0] > 0.5 else "☹️ Negative"
+        
         st.success(f"The sentiment is: **{sentiment}**")
     else:
         st.warning("Please enter a review.")
